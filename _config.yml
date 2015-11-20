@@ -1,0 +1,13 @@
+# Site settings
+title: Judit Ács's blog
+email: judit@sch.bme.hu
+description: > # this means to ignore newlines until "baseurl:"
+    Natural language processing, machine learning and programming in general.
+    Stuff I find interesting.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://juditacs.github.io" # the base hostname & protocol for your site
+twitter_username: acsjudit
+github_username:  juditacs
+
+# Build settings
+markdown: kramdown
