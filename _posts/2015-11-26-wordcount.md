@@ -9,7 +9,7 @@ date:   2015-11-26 19:00
 
 Creating word frequency lists is an easy task in most programming languages but how easy it is exactly?
 And what are the performance trade-offs?
-We played around with our favorite programming languages and got suprising results.
+We played around with our favorite programming languages and got surprising results.
 The experiment is still going, you can participate too. And please do.
 
 A couple weeks ago I had a homework where I had to create a word frequency list from text read from the standard input, and output the words and frequencies in decreasing order.
@@ -105,7 +105,7 @@ Now let's compare it with Python.
     user    0m5.477s
     sys     0m0.220s
 
-Ok, that was unexpected. Python's supposed to much slower than C++, right?
+OK, that was unexpected. Python's supposed to much slower than C++, right?
 Before we dwell into the details, let's see the output.
 
 ## The output
@@ -223,8 +223,8 @@ sys     0m0.403s
 
 # Other languages
 
-When I told my friends and collegues about this experiment, they were really enthusiastic about trying other languages and we wound up with a bunch of languages and wordcounters just waiting to be tested against each other.
-In addition to Python and C++, currently we have word counters in Java, shell script, Javascript, Julia, Perl, Python3 and PHP.
+When I told my friends and colleagues about this experiment, they were really enthusiastic about trying other languages and we wound up with a bunch of languages and word counters just waiting to be tested against each other.
+In addition to Python and C++, currently we have word counters in Java, shell script, JavaScript, Julia, Perl, Python 3 and PHP.
 I created a [GitHub repository](https://github/com/juditacs/wordcount) for this project and it was soon populated.
 
 The current leaderboard is [here](https://github.com/juditacs/wordcount#leaderboard).
@@ -239,27 +239,34 @@ Full results for 500,000 lines are summarized in this table:
 | :---: | :---: | :---:|:---: | :---: |
 | 1 | C++ best | 3.87 | 2.79 | 90548 |
 | 2 | C++ nosync | 4.44 | 3.27 | 104268 |
-| 3 | Python2 | 4.73 | 4.62 | 169524 |
+| 3 | Python 2 | 4.73 | 4.62 | 169524 |
 | 4 | C++ hash | 5.66 | 4.47 | 109292 |
 | 5 | C++ map | 6.84 | 5.65 | 110080 |
 | 6 | Java | 7.18 | 7.82 | 258476 |
-| 7 | Python3 | 7.41 | 7.22 | 147764 |
+| 7 | Python 3 | 7.41 | 7.22 | 147764 |
 | 8 | PHP | 7.96 | 6.72 | 251604 |
-| 9 | Shell script | 18.91 | 21.98 | 12860 |
+| 9 | Perl | 9.29 | 9.14 | 146520 |
+| 10 | JavaScript | 15.44 | 13.71 | 308868 |
+| 11 | Shell script | 18.91 | 21.98 | 12860 |
+| 12 | Julia | 22.0 | 21.77 | 289556 |
 
+<br />
 And for the full huwikisource dump:
 
-| Rank | Experiment | CPU seconds | User time | Memory |
-| :---: | :---: | :---:|:---: | :---: |
+| Rank | Experiment | CPU seconds | User time | Maximum memory |
+| :---: | :---: | :---: | :---: | :---: |
 | 1 | C++ best | 15.96 | 12.24 | 244404 |
 | 2 | C++ nosync | 18.81 | 15.02 | 327184 |
-| 3 | Python2 | 20.02 | 19.58 | 554352 |
+| 3 | Python 2 | 20.02 | 19.58 | 554352 |
 | 4 | C++ hash | 24.23 | 20.45 | 343276 |
 | 5 | Java | 27.37 | 31.39 | 545940 |
-| 6 | Python3 | 33.06 | 32.59 | 482988 |
+| 6 | Python 3 | 33.06 | 32.59 | 482988 |
 | 7 | C++ map | 35.1 | 31.25 | 355692 |
-| 8 | PHP | 39.82 | 35.58 | 781668 |
-| 9 | Shell script | 82.36 | 93.9 | 12924 |
+| 8 | Perl | 39.15 | 38.66 | 447000 |
+| 9 | PHP | 39.82 | 35.58 | 781668 |
+| 10 | JavaScript | 72.93 | 67.14 | 1005116 |
+| 11 | Shell script | 82.36 | 93.9 | 12924 |
+| 12 | Julia | 94.46 | 93.51 | 725232 |
 
 # Experimental setup
 
@@ -290,7 +297,7 @@ The point of this experiment was to compare *simple* solutions in different prog
 It turns out the results are not what I expected, but by no means am I trying to tell which language is better than the other.
 I also do not claim that these are the best possible solutions.
 
-# Acknowledgements
+# Acknowledgments
 
-I thank the authors of all the other scripts, in alphabetical order: Patrik Braun (PHP), László Kundra (Javascript) and Dávid Nemeskey (Java and suggestions for C++).
+I thank the authors of all the other scripts, in alphabetical order: Patrik Braun (PHP), László Kundra (JavaScript) and Dávid Nemeskey (Java and suggestions for C++).
 I also thank Zoltán Czirkos, András Kornai and Gábor Borbély for useful suggestions.
