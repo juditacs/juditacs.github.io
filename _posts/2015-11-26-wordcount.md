@@ -225,7 +225,7 @@ sys     0m0.403s
 
 When I told my friends and colleagues about this experiment, they were really enthusiastic about trying other languages and we wound up with a bunch of languages and word counters just waiting to be tested against each other.
 In addition to Python and C++, currently we have word counters in Java, shell script, JavaScript, Julia, Perl, Python 3 and PHP.
-I created a [GitHub repository](https://github/com/juditacs/wordcount) for this project and it was soon populated.
+I created a [GitHub repository](https://github.com/juditacs/wordcount) for this project and it was soon populated.
 
 The current leaderboard is [here](https://github.com/juditacs/wordcount#leaderboard).
 
@@ -276,7 +276,7 @@ I've never used Docker before and I decided to give it a try for this experiment
 Docker is similar to a virtual machine but much more lightweight.
 You can download images or build your own and load them into Docker containers which are mini operating systems with root access for you.
 Images are built by running commands read from a Dockerfile.
-I'm not going to bore you with all the technical details, you can find an explanation in this [README](https://github/com/juditacs/wordcount).
+I'm not going to bore you with all the technical details, you can find an explanation in this [README](https://github.com/juditacs/wordcount).
 
 I created a Dockerfile which installs the dependencies needed by this experiment.
 My friends added other languages and their dependencies too, so once you build the image and load it into a container, the experiment should work without installing additional packages.
