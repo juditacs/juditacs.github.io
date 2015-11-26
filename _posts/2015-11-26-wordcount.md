@@ -247,7 +247,7 @@ Full results for 500,000 lines are summarized in this table:
 | 8 | PHP | 7.96 | 6.72 | 251604 |
 | 9 | Perl | 9.29 | 9.14 | 146520 |
 | 10 | JavaScript | 15.44 | 13.71 | 308868 |
-| 11 | Shell script | 18.91 | 21.98 | 12860 |
+| 11 | Shell script | 18.91 | 21.98 | 12860\* |
 | 12 | Julia | 22.0 | 21.77 | 289556 |
 
 <br />
@@ -265,8 +265,10 @@ And for the full huwikisource dump:
 | 8 | Perl | 39.15 | 38.66 | 447000 |
 | 9 | PHP | 39.82 | 35.58 | 781668 |
 | 10 | JavaScript | 72.93 | 67.14 | 1005116 |
-| 11 | Shell script | 82.36 | 93.9 | 12924 |
+| 11 | Shell script | 82.36 | 93.9 | 12924\* |
 | 12 | Julia | 94.46 | 93.51 | 725232 |
+
+\* the shell script's memory consumption cannot measured properly with `time`, suggestions are welcome.
 
 # Experimental setup
 
