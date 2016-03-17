@@ -7,9 +7,41 @@ email: "judit@sch.bme.hu"
 date:   2016-02-26 19:00
 ---
 
-I started a word counting challenge a few months ago and it received a lot more interest than I expected.
+
+I started a word counting challenge a few months ago and it received a lot more
+interest than I expected. Yes, I admit that I deliberately made the challenge
+sound very easy thus more people would participate.
+
+Currently there are 18 unique solution in 12 languages if you count Python2 and
+3 separate languages. Over a dozen people contributed, I thank you all.
+
+This has been an amazing experience for me, and I learnt a few valuable lessons
+during this competition:
+
+* I should have made the rules much clearer and much sooner.
+* I should have decided on the test data sooner to avoid having 3-4 leaderboard
+tables.
+* I ended up adding half of the test cases later than announcing the
+competition which was necessary but unfair.
 
 
+# The final dataset
+
+I used the Hungarian Wikipedia for the final experiments. Each solution was
+tested on the first 5 million lines and later on the full Hungarian Wikipedia
+TODO meret, sorok szama
+
+Most of them performed well on the full dataset except:
+
+* all Java versions seem to hang for hours and were killed (by me) after a day,
+* the Javascript version runs out of memory (16GB).
+
+
+# Can I still contribute?
+
+Yes, you are welcome to contribute. However, I won't update this article with
+your results. If a second wave of great solutions come, I might write a third
+article.
 
 
 | Rank | Experiment | CPU seconds | User time | Maximum memory |
@@ -26,5 +58,3 @@ I started a word counting challenge a few months ago and it received a lot more 
 | 10 | bash/wordcount.sh | 2100.96 | 2128.94 | 13768 |
 
 
-* I should have made the rules much clearer
-* I should have decided on the test data sooner to avoid having 3-4 leaderboard tables
