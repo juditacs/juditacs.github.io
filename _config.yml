@@ -11,3 +11,6 @@ github_username:  juditacs
 
 # Build settings
 markdown: kramdown
+kramdown:
+    input: GFM
+    hard_wrap: false
