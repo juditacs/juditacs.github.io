@@ -16,7 +16,7 @@ A couple weeks ago I had a homework where I had to create a word frequency list 
 Ties had to be printed in alphabetical order.
 This seems like a fairly easy task, I do it all the time in Python, so I was curious how easy it would be in C++.
 
-My first version looked like this [[wordcount_map.cpp]](https://github.com/juditacs/wordcount/blob/master/cpp/wordcount_map.cpp):
+My first version looked like this [[wordcount_map.cpp]](https://github.com/juditacs/wordcount/blob/2d3467570098b730628cce9fb01eed9f6ae664a8/cpp/wordcount_map.cpp):
 
 {% highlight c++ %}
 #include <iostream>
@@ -70,7 +70,7 @@ We will get back to it later.
 
 
 Since I do similar tasks in Python almost every day, I did the shortest Python implementation I could come up with.
-A slightly neater version is available here: [wordcount.py](https://github.com/juditacs/wordcount/blob/master/python/wordcount_py2.py)
+A slightly neater version is available here: [wordcount.py](https://github.com/juditacs/wordcount/blob/2d3467570098b730628cce9fb01eed9f6ae664a8/python/wordcount_py2.py)
 
 {% highlight python %}
 from collections import defaultdict
@@ -156,7 +156,7 @@ Both have their advantages but for this case insertion is particularly interesti
 The insertion in a red-black tree is *O(log n)*, while it is *O(1)* on average in the case of hash table.
 There are just too many word types.
 
-Fortunately the STL has several hash table-based containers such as the `std::unordered_map`, we just have to replace `std::map` [wordcount_hashtable.cpp](https://github.com/juditacs/wordcount/blob/master/cpp/wordcount_hashtable.cpp):
+Fortunately the STL has several hash table-based containers such as the `std::unordered_map`, we just have to replace `std::map` [wordcount_hashtable.cpp](https://github.com/juditacs/wordcount/blob/2d3467570098b730628cce9fb01eed9f6ae664a8/cpp/wordcount_hashtable.cpp):
 
 {% highlight c++ %}
 
@@ -195,7 +195,7 @@ This behavior can be disabled by setting [sync_with_stdio](http://en.cppreferenc
 std::ios_base::sync_with_stdio(false);  // call this at the beginning of main
 {% endhighlight %}
 
-Now let's try this version (see the full code [here](https://github.com/juditacs/wordcount/blob/master/cpp/wordcount_hashtable_nosync_stdio.cpp) ).
+Now let's try this version (see the full code [here](https://github.com/juditacs/wordcount/blob/2d3467570098b730628cce9fb01eed9f6ae664a8/cpp/wordcount_hashtable_nosync_stdio.cpp) ).
 
 ~~~~
 $ g++ cpp/wordcount_hashtable_nosync_stdio.cpp -o ./cpp/wc_hash_nosync -std=c++11 -O3
@@ -210,7 +210,7 @@ sys     0m0.480s
 Getting better.
 
 Still, a few things can be improved, like using const references instead of copying or inserting the (word, frequency) pairs into a vector, then sorting the vector.
-The current best version is [here](https://github.com/juditacs/wordcount/blob/master/cpp/wordcount_vector.cpp).
+The current best version is [here](https://github.com/juditacs/wordcount/blob/2d3467570098b730628cce9fb01eed9f6ae664a8/cpp/wordcount_vector.cpp).
 
 ~~~~
 $ g++ cpp/wordcount_vector.cpp -o ./cpp/wc_vector -std=c++11 -O3
