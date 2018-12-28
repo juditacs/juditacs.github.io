@@ -5,7 +5,6 @@ tags: [ "python", "pytorch", "matrix tricks" ]
 author: "Judit Ács"
 email: "judit@sch.bme.hu"
 date:   2018-12-27 11:40
-image: /assets/padded_sequence.png
 ---
 
 Attention has become ubiquitous in sequence learning tasks such as machine
@@ -29,7 +28,7 @@ Our working example is going to be a toy dataset of 4 sequences and a separate
 vector that contains the length of each sequence. We align the sequences to the
 left and pad them on the right.
 
-![padded](/assets/padded_sequence.png){: .center-image}
+<img src="/assets/padded_sequence.png" width="400">{: .center-image}
 
 When using padding we require attention to focus solely on the valid symbols
 and assing zero weight to pad symbols since they do not carry useful information.
@@ -144,7 +143,13 @@ infinity and then call softmax:
 
 ```python
 X[~mask] = float('-inf')
+print(X)
 print(torch.softmax(x, dim=1))
+
+> tensor([[3.8000, 4.4000, 3.0000, 3.6000,   -inf,   -inf],
+          [3.4000,   -inf,   -inf,   -inf,   -inf,   -inf],
+          [3.4000, 4.8000, 3.0000, 4.4000, 3.8000, 4.2000],
+          [3.2000, 3.4000, 4.6000,   -inf,   -inf,   -inf]], dtype=torch.float64)
 
 > tensor([[0.2445, 0.4455, 0.1099, 0.2002, 0.0000, 0.0000],
           [1.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
