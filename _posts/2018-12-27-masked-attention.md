@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Masking attention weights"
+title:  "Masking attention weights in PyTorch"
 tags: [ "python", "pytorch", "matrix tricks" ]
 author: "Judit Ács"
 email: "judit@sch.bme.hu"
