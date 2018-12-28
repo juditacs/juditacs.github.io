@@ -5,6 +5,7 @@ tags: [ "python", "pytorch", "matrix tricks" ]
 author: "Judit Ács"
 email: "judit@sch.bme.hu"
 date:   2018-12-27 11:40
+image: /assets/padded_sequence.png
 ---
 
 Attention has become ubiquitous in sequence learning tasks such as machine
