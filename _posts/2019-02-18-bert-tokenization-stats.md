@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[DRAFT] Catchy title that does not oversell the article"
+title:  "On BERT's Vocabulary"
 tags: [ "bert", "Universal Dependencies", "deep learning" ]
 author: "Judit Ács"
 email: "judit@sch.bme.hu"
@@ -16,7 +16,7 @@ and successful examples of these embeddings. The authors of BERT released
 several versions of BERT pretrained on massive amounts of data, including a
 multilingual version which supports 104 languages in a single model.
 
-## Multilingual BERT vocabulary
+## Multilingual BERT Vocabulary
 
 I was admittedly intrigued by the idea of a single model for 104 languages with
 a large shared vocabulary. The vocabulary is 119,547 WordPiece model, and the
@@ -211,9 +211,4 @@ available [here](/assets/bert_vocab/bert_token_len_full.png).
 
 The code used to generate the plots is available
 [here](https://github.com/juditacs/snippets/blob/master/deep_learning/bert_vocab_stats/bert_vocab_stats.ipynb).
-
-### Title ideas
-
-1. On BERT's multilingual tokenization
-2. How multilingual are multilingual BERT word pieces?
 
