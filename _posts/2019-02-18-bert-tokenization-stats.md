@@ -207,7 +207,8 @@ scale is shown on the right side of each plot. The full list is available
 
 ![bert_len_short](/assets/bert_vocab/bert_token_len_short.png)
 
-The code is available here TODO
+The code used to generate the plots is available
+[here](https://github.com/juditacs/snippets/blob/master/deep_learning/bert_vocab_stats/bert_vocab_stats.ipynb).
 
 ### Title ideas
 
