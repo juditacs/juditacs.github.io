@@ -45,7 +45,7 @@ beforehand. PyTorch and NumPy allow setting certain elements of a tensor using
 boolean masks. Mask are the same size as the tensor being masked and only those
 elements are updated where the mask value is true:
 
-```python
+{% highlight python %}
 X = torch.arange(12).view(4, 3)
 mask = torch.zeros((4, 3), dtype=torch.uint8)  # or dtype=torch.ByteTensor
 mask[0, 0] = 1
@@ -59,11 +59,11 @@ print(X)
           [  6,   7,   8],
           [  9,  10, 100]])
 
-```
+{% endhighlight %}
 
 Masks can also be inverted with the `~` operator:
 
-```python
+{% highlight python %}
 X = torch.arange(12).view(4, 3)
 X[~mask] = 100
 print(X)
@@ -72,23 +72,23 @@ print(X)
           [100,   4, 100],
           [100, 100, 100],
           [100, 100,  11]])
-```
+{% endhighlight %}
 
 Let's define our dataset as tensors:
 
-```python
+{% highlight python %}
 # generating the actual toy example
 np.random.seed(1)
 X = np.random.random(data.shape).round(1) * 2 + 3
 X = torch.from_numpy(X)
 X_len = torch.LongTensor([4, 1, 6, 3])  # length of each sequence
-```
+{% endhighlight %}
 
 Now all we need to do is create a mask with true values in place of real values
 and zeros in pad values and use that mask before softmax. We apply a little
 broadcasting trick for this:
 
-```python
+{% highlight python %}
 maxlen = X.size(1)
 mask = torch.arange(maxlen)[None, :] < X_len[:, None]
 print(mask)
@@ -96,7 +96,7 @@ print(mask)
           [1, 1, 1, 1, 1, 1],
           [1, 0, 0, 0, 0, 0],
           [1, 1, 1, 1, 1, 1]], dtype=torch.uint8)
-```
+{% endhighlight %}
 
 `None` indices create dummy dimensions which can repeat the real data as many
 times as necessary for the operation. The left operand of `<` is a sequence of
@@ -113,7 +113,7 @@ repetitions in this case. You can read more about PyTorch broadcasting
 A less concise but perhaps more readable way to create the mask is to manually
 expand both tensors:
 
-```python
+{% highlight python %}
 maxlen = X.size(1)
 idx = torch.arange(maxlen).unsqueeze(0).expand(X.size())
 print(idx)
@@ -134,14 +134,14 @@ print(mask)
           [1, 0, 0, 0, 0, 0],
           [1, 1, 1, 1, 1, 1],
           [1, 1, 1, 0, 0, 0]], dtype=torch.uint8)
-```
+{% endhighlight %}
 
 The former is about 15% faster than the latter when tested on CPU.
 
 Using inverse masking, we set the pad values' attention weights to negative
 infinity and then call softmax:
 
-```python
+{% highlight python %}
 X[~mask] = float('-inf')
 print(X)
 print(torch.softmax(x, dim=1))
@@ -155,7 +155,7 @@ print(torch.softmax(x, dim=1))
           [1.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
           [0.0822, 0.3335, 0.0551, 0.2235, 0.1227, 0.1830],
           [0.1593, 0.1946, 0.6461, 0.0000, 0.0000, 0.0000]], dtype=torch.float64)
-```
+{% endhighlight %}
 
 The jupyter notebook used for the examples along with all visualization is
 available
