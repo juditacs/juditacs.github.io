@@ -20,13 +20,13 @@ multilingual version which supports 104 languages in a single model.
 
 I was admittedly intrigued by the idea of a single model for 104 languages with
 a large shared vocabulary. The vocabulary is 119,547 WordPiece model, and the
-input is tokenized into subwords so that each subword unit is an element of the
-dictionary. Non-word-initial units are prefixed with `##` as a continuation
-symbol except for Chinese characters which are surrounded by spaces before any
-tokenization takes place. The tokenizer favors longer subwords with a de facto
-character-level model as a fallback as every character is part of the
-vocabulary as a possible subword unit. An example of such tokenization using
-[Hugging Face's PyTorch implementation of
+input is tokenized into _word pieces_ (also known as subwords) so that each
+word piece is an element of the dictionary. Non-word-initial units are prefixed
+with `##` as a continuation symbol except for Chinese characters which are
+surrounded by spaces before any tokenization takes place. The tokenizer favors
+longer word pieces with a de facto character-level model as a fallback as every
+character is part of the vocabulary as a possible word piece. An example of
+such tokenization using [Hugging Face's PyTorch implementation of
 BERT](https://github.com/huggingface/pytorch-pretrained-BERT) looks like this:
 
 {% highlight python %}
@@ -40,8 +40,8 @@ tokenizer.tokenize("Elvégezhetitek")
 This segmentation is purely frequency based and it is very different from what
 a true morphological segmenter would output (_El-végez-het-itek_). This example
 is certainly longer than an average Hungarian word and the average word is not
-tokenized this aggressively but BERT does produce a large number of subword
-units for certain languages. I will examine this closer in this post.
+tokenized this aggressively but BERT does produce a large number of word pieces
+for certain languages. I will examine this closer in this post.
 
 The first 106 symbols are reserved for constants like `PAD` and `UNK` and
 unused placeholders for application specific symbols. 36.5% of the vocabulary
@@ -193,17 +193,19 @@ sentences).
 
 Similar trends can be found in the sentence length distribution defined as the
 number of tokens in a sentence. Here is a comparison for a few cherrypicked
-languages. Fertility values are listed in parentheses above each plot. The full
-list is available [here](/assets/bert_vocab/bert_sent_len_full.png)
+languages. The x-axes represent the sentence length in tokens and the y-axes
+are the proportion of sentences of certain length. Fertility values are listed
+in parentheses above each plot. The full list is available
+[here](/assets/bert_vocab/bert_sent_len_full.png)
 
 ![bert_sent_len](/assets/bert_vocab/bert_sent_len_short.png)
 
 Finally the prettiest plots show how BERT affects the distribution of token
 length in the same languages.  The bars represent the ratio of N-long BERT word
-pieces, while the blue curves show the original token length distribuition. The
-y-scales are different, the bars' scale is shown on the left, and the curve's
-scale is shown on the right side of each plot. The full list is available
-[here](/assets/bert_vocab/bert_token_len_full.png).
+pieces, while the blue curves show the original token length distribution. The
+y-axes are scaled differently, the bars' scale is shown on the left, and the
+curve's scale is shown on the right side of each plot. The full list is
+available [here](/assets/bert_vocab/bert_token_len_full.png).
 
 ![bert_len_short](/assets/bert_vocab/bert_token_len_short.png)
 
