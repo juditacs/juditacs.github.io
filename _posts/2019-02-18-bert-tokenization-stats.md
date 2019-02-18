@@ -58,7 +58,7 @@ with a sharp drop after that and a somewhat surprising second peak at
 characters. The list of the 20 longest symbols features many German compounds
 and other long words frequent in Wikipedia:
 
-| token | length | token | length |
+| Token | Length | Token | Length |
 | :---- | :---- | :----- | :----- |
 | bewerkingsgeschiedenis | 22 | Auseinandersetzungen | 20 |
 | ուսումնասիրությունների | 22 | தொகுக்கப்பட்டுள்ளது | 19 |
