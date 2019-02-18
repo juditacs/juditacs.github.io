@@ -84,7 +84,8 @@ introduction](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-eve
 I grouped the ranges into _overlapping_ macro categories such as ASCII, Latin
 (includes diacritics), CJK (Chinese, Japanese, Korean), CJK+Kana (CJK,
 Hiragana, Katakana), Cyrillic, Korean Hangul, Indian (various alphabets used
-mainly in India) etc. The exact mapping is available TODO here.
+mainly in India) etc. The exact mapping is available
+[here](/assets/bert_vocab/macro_unicode_ranges.txt).
 
 We can match ranges of unicode character with Python regular expressions like
 this:
