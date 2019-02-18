@@ -87,7 +87,7 @@ Hiragana, Katakana), Cyrillic, Korean Hangul, Indian (various alphabets used
 mainly in India) etc. The exact mapping is available
 [here](/assets/bert_vocab/macro_unicode_ranges.txt).
 
-We can match ranges of unicode character with Python regular expressions like
+We can match ranges of Unicode character with Python regular expressions like
 this:
 
 {% highlight python %}
@@ -148,26 +148,26 @@ all pieces). The rest of the categories are much smaller, probably due to their
 respective Wikipedias being much smaller than that of the European languages.
 This table lists how many word pieces were matched by each category:
 
-| script | sum | % |
+| Script | Sum | % |
 | :----- | :----- | :----- |
-| latin | 93495 | 78.21 |
-| ascii | 92327 | 77.23 |
-| cjk+kana | 14932 | 12.49 |
-| cyrillic | 13782 | 11.53 |
-| cjk | 13601 | 11.38 |
-| indian | 6545 | 5.47 |
-| arabic | 4873 | 4.08 |
-| korean | 3273 | 2.74 |
-| hebrew | 2482 | 2.08 |
-| greek | 1566 | 1.31 |
-| kana | 1331 | 1.11 |
-| armenian | 1236 | 1.03 |
-| georgian | 705 | 0.59 |
-| misc | 639 | 0.53 |
-| thai | 370 | 0.31 |
-| myanmar | 271 | 0.23 |
-| tibetan | 40 | 0.03 |
-| mongolian | 4 | 0.0 |
+| Latin | 93495 | 78.21 |
+| ASCII | 92327 | 77.23 |
+| CJK+kana | 14932 | 12.49 |
+| Cyrillic | 13782 | 11.53 |
+| CJK | 13601 | 11.38 |
+| Indian | 6545 | 5.47 |
+| Arabic | 4873 | 4.08 |
+| Korean | 3273 | 2.74 |
+| Hebrew | 2482 | 2.08 |
+| Greek | 1566 | 1.31 |
+| Kana | 1331 | 1.11 |
+| Armenian | 1236 | 1.03 |
+| Georgian | 705 | 0.59 |
+| Misc | 639 | 0.53 |
+| Thai | 370 | 0.31 |
+| Myanmar | 271 | 0.23 |
+| Tibetan | 40 | 0.03 |
+| Mongolian | 4 | 0.0 |
 
 <br>
 
