@@ -4,7 +4,7 @@ title:  "Exploring BERT's Vocabulary"
 tags: [ "bert", "Universal Dependencies", "deep learning" ]
 author: "Judit Ács"
 email: "judit@sch.bme.hu"
-date:   2019-02-18 11:40
+date:   2019-02-19 13:15
 ---
 
 Deep contextualized word representations have taken word representation to the
