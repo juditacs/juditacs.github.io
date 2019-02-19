@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "On BERT's Vocabulary"
+title:  "Exploring BERT's Vocabulary"
 tags: [ "bert", "Universal Dependencies", "deep learning" ]
 author: "Judit Ács"
 email: "judit@sch.bme.hu"
