@@ -178,18 +178,29 @@ grammatical annotation with treebanks available in more than 70 languages, 54
 overlapping with BERT's language list. The smallest treebanks are Tagalog (55
 sentences) and Yoruba (100 sentences), while the largest ones are Czech
 (127,507) and Russian (69,683). I tokenized each treebank with `BertTokenizer`
-and compared the tokenization with the gold standard tokenization.
+and compared the tokenization with the gold standard tokenization. The input to
+`BertTokenizer` was the full text form of the sentence.
 
 Let's define _fertility_, borrowed from statistical machine translation, as the
 average number of BERT word pieces corresponding with a single real token. The
 example `['El', '##vé', '##ge', '##zhet', '##ite', '##k']` has a fertility 6,
 but we can expect lower values on average. Fertility would be 1 if all tokens
-were in BERT's vocabulary. As illustrated in this plot, BERT has the
-lowest fertility in English (1.2) and the highest in Tamil (3.17). The latter
-could be an artifact of the Tamil dataset, which is relatively small (600
-sentences).
+were in BERT's vocabulary. As illustrated in this plot, BERT has the lowest
+fertility in Galician (1.16) and the highest in Telugu (2.85).  It should be
+noted UD Treebanks differ in tokenization, for example Japanese tokenizes
+inflections as separate tokens, while Korean does not, even though their
+morphology shares many similarities. More aggressive tokenization results in
+lower fertility values.
 
-![bert_fertility](/assets/bert_vocab/bert_token_ratio.png)
+![bert_fertility](/assets/bert_vocab/bert_fertility.png)
+
+Examining is the proportion of continuation word pieces shows us a different
+picture.  Since Chinese characters are presegmented, there are barely any
+continuation word pieces (0.2%), with English (13.1%) and Vietnamese (13.5%)
+following. The highest proportion of continuation word pieces can be found in
+Tamil (67.3%) and Telugu (64.7%).
+
+![bert_continuation_proportion](/assets/bert_vocab/bert_continuation_ratio.png)
 
 Similar trends can be found in the sentence length distribution defined as the
 number of tokens in a sentence. Here is a comparison for a few cherrypicked
@@ -218,10 +229,21 @@ I explored BERT's multilingual vocabulary by itself and through its
 tokenization on 54 languages that have UD treebanks. I found that the majority
 of elements in BERT's vocabulary are that of the European languages, most
 of them pure ASCII. Examining the output of BERT tokenizer confirmed that the
-tokenizer keeps English mostly intact while may generate very different token
-distributions in morphologically rich languages, which may be the desired
-behavior of a multilingual approach.
+tokenizer keeps English mostly intact while it may generate different token
+distributions in morphologically rich languages. The degree of how much this
+tokenization resembles a morphological segmentation remains to be explored.
 
-The code used to generate the plots and the input statistics are available
-[here](https://github.com/juditacs/snippets/blob/master/deep_learning/bert_vocab_stats/bert_vocab_stats.ipynb).
+## Code
 
+The script used to extract BERT and UD stats can be found
+[here](https://github.com/juditacs/snippets/blob/master/deep_learning/bert_vocab_stats/compute_bert_tokenizer_stats.py).
+[This
+notebook](https://github.com/juditacs/snippets/blob/master/deep_learning/bert_vocab_stats/bert_vocab_stats.ipynb) contains all code used to generate the plots.
+Raw statistics are available as TSV in the same
+[directory](https://github.com/juditacs/snippets/tree/master/deep_learning/bert_vocab_stats).
+
+## Acknowledgment
+
+I would like to thank [Ofir Press](https://twitter.com/OfirPress/) and my
+Hungarian [colleagues](https://hlt.bme.hu/en/) for feedback on earlier drafts
+of this article.
