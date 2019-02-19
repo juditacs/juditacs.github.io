@@ -194,7 +194,7 @@ lower fertility values.
 
 ![bert_fertility](/assets/bert_vocab/bert_fertility.png)
 
-Examining is the proportion of continuation word pieces shows us a different
+Examining the proportion of continuation word pieces shows us a different
 picture.  Since Chinese characters are presegmented, there are barely any
 continuation word pieces (0.2%), with English (13.1%) and Vietnamese (13.5%)
 following. The highest proportion of continuation word pieces can be found in
