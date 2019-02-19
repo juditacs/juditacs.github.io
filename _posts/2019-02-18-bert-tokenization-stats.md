@@ -11,9 +11,9 @@ Deep contextualized word representations have taken word representation to the
 next level by assigning word vectors to words in context - typically a sentence -
 instead of assigning a vector to each word type.
 [ELMO](https://allennlp.org/elmo) and
-[BERT](https://github.com/google-research/bert) are arguably the most popular
-and successful examples of these embeddings. The authors of BERT released
-several versions of BERT pretrained on massive amounts of data, including a
+[BERT](https://github.com/google-research/bert) are the most popular and
+successful examples of these embeddings. The authors of BERT released several
+versions of BERT pretrained on massive amounts of data, including a
 multilingual version which supports 104 languages in a single model.
 
 ## Multilingual BERT Vocabulary
