@@ -184,7 +184,7 @@ Let's define _fertility_, borrowed from statistical machine translation, as the
 average number of BERT word pieces corresponding with a single real token. The
 example `['El', '##vé', '##ge', '##zhet', '##ite', '##k']` has a fertility 6,
 but we can expect lower values on average. Fertility would be 1 if all tokens
-were in BERT's vocabulary. As illustrated in this plot shows, BERT has the
+were in BERT's vocabulary. As illustrated in this plot, BERT has the
 lowest fertility in English (1.2) and the highest in Tamil (3.17). The latter
 could be an artifact of the Tamil dataset, which is relatively small (600
 sentences).
@@ -196,7 +196,7 @@ number of tokens in a sentence. Here is a comparison for a few cherrypicked
 languages. The x-axes represent the sentence length in tokens and the y-axes
 are the proportion of sentences of certain length. Fertility values are listed
 in parentheses above each plot. The full list is available
-[here](/assets/bert_vocab/bert_sent_len_full.png)
+[here](/assets/bert_vocab/bert_sent_len_full.png).
 
 ![bert_sent_len](/assets/bert_vocab/bert_sent_len_short.png)
 
