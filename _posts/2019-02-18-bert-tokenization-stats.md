@@ -195,8 +195,9 @@ Similar trends can be found in the sentence length distribution defined as the
 number of tokens in a sentence. Here is a comparison for a few cherrypicked
 languages. The x-axes represent the sentence length in tokens and the y-axes
 are the proportion of sentences of certain length. Fertility values are listed
-in parentheses above each plot. The full list is available
-[here](/assets/bert_vocab/bert_sent_len_full.png).
+in parentheses above each plot. The full list in alphabetical order is
+available [here](/assets/bert_vocab/bert_sent_len_full.png), and sorted by
+fertility [here](/assets/bert_vocab/bert_sent_len_full_fertility_sorted.png).
 
 ![bert_sent_len](/assets/bert_vocab/bert_sent_len_short.png)
 
@@ -204,11 +205,23 @@ Finally the prettiest plots show how BERT affects the distribution of token
 length in the same languages.  The bars represent the ratio of N-long BERT word
 pieces, while the blue curves show the original token length distribution. The
 y-axes are scaled differently, the bars' scale is shown on the left, and the
-curve's scale is shown on the right side of each plot. The full list is
-available [here](/assets/bert_vocab/bert_token_len_full.png).
+curve's scale is shown on the right side of each plot. The full list in
+alphabetical order is available
+[here](/assets/bert_vocab/bert_token_len_full.png), and sorted by fertility
+[here](/assets/bert_vocab/bert_token_len_full_fertility_sorted.png).
 
 ![bert_len_short](/assets/bert_vocab/bert_token_len_short.png)
 
-The code used to generate the plots is available
+## Conclusion
+
+I explored BERT's multilingual vocabulary by itself and through its
+tokenization on 54 languages that have UD treebanks. I found that the majority
+of elements in BERT's vocabulary are that of the European languages, most
+of them pure ASCII. Examining the output of BERT tokenizer confirmed that the
+tokenizer keeps English mostly intact while may generate very different token
+distributions in morphologically rich languages, which may be the desired
+behavior of a multilingual approach.
+
+The code used to generate the plots and the input statistics are available
 [here](https://github.com/juditacs/snippets/blob/master/deep_learning/bert_vocab_stats/bert_vocab_stats.ipynb).
 
